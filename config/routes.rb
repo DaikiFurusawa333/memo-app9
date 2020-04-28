@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "/categories/:id", to:"categories#show" 
+
   root to:"memos#index"
   get '/new', to:"memos#new"
   post '/create', to:"memos#create"

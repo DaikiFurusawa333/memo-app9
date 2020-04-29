@@ -8,7 +8,8 @@ class MemosController < ApplicationController
   end
 
   def create
-    Memo.create(title:params["memos"]["title"],body:params["memos"]["body"],category_id:params["memos"]["category_id"])
+    Memo.create(title:params["memos"]["title"],body:params["memos"]["body"],
+    category_id:params["memos"]["category_id"],picture:params["memos"]["picture"])
     redirect_to "/"
   end
   
@@ -27,6 +28,7 @@ class MemosController < ApplicationController
     memo.title = params["memos"]["title"]
     memo.body = params["memos"]["body"]
     memo.category_id = params["memos"]["category_id"]
+    memo.picture = params["memos"]["picture"]
     memo.save
     redirect_to "/"
   end
